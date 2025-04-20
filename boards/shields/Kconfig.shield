@@ -1,5 +1,0 @@
-config SHIELD_DCHOI_LEFT
-    def_bool $(shields_list_contains,dchoi_left)
-
-config SHIELD_DCHOI_RIGHT
-    def_bool $(shields_list_contains,dchoi_right)
