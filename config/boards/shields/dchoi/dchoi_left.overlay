@@ -1,4 +1,4 @@
-
+#include "dchoi.dtsi"
 
 &chosen {
     zmk,kscan = &kscan0;
