@@ -3,9 +3,6 @@ if SHIELD_DCHOI_LEFT
 config ZMK_KEYBOARD_NAME
     string "dchoi"
 
-config ZMK_IDLE_TIMEOUT
-    default 600000
-
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
 
@@ -16,9 +13,6 @@ if SHIELD_DCHOI_LEFT || SHIELD_DCHOI_RIGHT
 config ZMK_KEYBOARD_NAME
     string "dchoi"
 
-config ZMK_IDLE_TIMEOUT
-    default 600000
-    
 config ZMK_SPLIT
     default y
 
