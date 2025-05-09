@@ -43,11 +43,23 @@
                 };
         };
         behaviors {
-                qstin: question_slash {
-                compatible = "zmk,behavior-mod-morph";
+                qstin: custom_up_question {
+                compatible = "zmk,behavior-momentary";
+                label = "Custom UP or Question";
                 #binding-cells = <0>;
-                bindings = <&kp UP>, <&kp QMARK>;
-                mods = <(MOD_RSFT)>;
+                bindings = <&kp UP>;
+                };
+        };
+
+        key-overrides {
+                compatible = "zmk,key-overrides";
+
+                up_to_question_override {
+                // Match on Right Shift + Custom Key
+                modifiers = <(MOD_RSHIFT)>;
+                layers = <0>; // Add other layers if needed
+                bindings = <&kp QUESTION>;
+                keycode = <KEY_UP>; // This is the base key output
                 };
         };
 };
