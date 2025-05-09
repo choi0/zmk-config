@@ -23,7 +23,7 @@
    &kp GRAVE  &kp N1    &kp N2    &kp N3    &kp N4     &kp N5     &kp N6                        &kp N7     &kp N8   &kp N9     &kp N0    &kp MINUS &kp EQUAL &kp BSPC  &trans
    &trans     &kp TAB   &kp Q     &kp W     &kp E      &kp R      &kp T                         &kp Y      &kp U    &kp I      &kp O     &kp P     &kp LBKT  &kp RBKT  &kp BSLH
    &trans     &kp CAPS  &kp A     &kp S     &kp D      &kp F      &kp G                         &kp H      &kp J    &kp K      &kp L     &kp SEMI  &kp APOS  &kp RET   &trans
-   &trans     &kp LSHFT &kp Z     &kp X     &kp C      &kp V      &kp B                         &kp N      &kp M    &kp COMMA  &kp DOT   &qstin    &trans    &kp LSHFT &trans 
+   &trans     &kp LSHFT &kp Z     &kp X     &kp C      &kp V      &kp B                         &kp N      &kp M    &kp COMMA  &kp DOT   &kp UP    &trans    &kp LSHFT &trans 
    &kp LCTRL  &kp LGUI  &kp LALT  &kp SPACE &trans     &trans     &trans                        &kp SPACE  &trans   &kp ESC    &kp LEFT  &kp DOWN  &kp RIGHT &mo 1     &trans
                         >;
                 };
@@ -42,24 +42,14 @@
                         >;
                 };
         };
-        behaviors {
-                qstin: custom_up_question {
-                compatible = "zmk,behavior-momentary";
-                label = "Custom UP or Question";
-                #binding-cells = <0>;
-                bindings = <&kp UP>;
-                };
-        };
-
         key-overrides {
                 compatible = "zmk,key-overrides";
 
                 up_to_question_override {
-                // Match on Right Shift + Custom Key
                 modifiers = <(MOD_RSHIFT)>;
-                layers = <0>; // Add other layers if needed
+                layers = <0>; // or omit to apply to all layers
+                keycode = <UP>;
                 bindings = <&kp QUESTION>;
-                keycode = <KEY_UP>; // This is the base key output
                 };
         };
 };
